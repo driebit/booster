@@ -1,0 +1,22 @@
+{
+    "name": "driebit/booster",
+    "description": "Make your tests run faster",
+    "keywords": ["phpunit", "test", "symfony"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Driebit",
+            "homepage": "http://www.driebit.nl",
+            "email": "tech@driebit.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Driebit\\Booster\\": "src/",
+            "Driebit\\Booster\\Tests\\": "tests/"
+        }
+    },
+}
