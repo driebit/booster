@@ -66,6 +66,8 @@ container many times. If debug mode is enabled, Symfony will check whether any
 resources have changed during each container initialization. By disabling
 debug mode, you wil be using a cached container in your tests.
 
+Use the trait from your AppKernel:
+
 ```php
 use Driebit\Booster\Symfony\NoDebugTrait;
 
