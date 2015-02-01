@@ -18,5 +18,5 @@
             "Driebit\\Booster\\": "src/",
             "Driebit\\Booster\\Tests\\": "tests/"
         }
-    },
+    }
 }
