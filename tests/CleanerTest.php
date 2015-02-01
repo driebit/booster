@@ -13,9 +13,11 @@ class CleanerTest extends \PHPUnit_Framework_TestCase
         $cleaner = new Cleaner();
         $cleaner->nullProperties($object);
 
-        $this->assertEquals('static', $object::$staticProp);
         $this->assertNull($object->publicProp);
         $this->assertNull($object->getProtectedProp());
+        $this->assertEquals('static', $object::$staticProp);
+        $this->assertEquals('whitelisted', $object->PHPUnit_whitelisted);
+
     }
 }
 
@@ -23,7 +25,7 @@ class SillyObject
 {
     public $publicProp = 'public';
     protected $protectedProp = 'protected';
-    protected $PHPUnit_whitelisted = 'whitelisted';
+    public $PHPUnit_whitelisted = 'whitelisted';
     public static $staticProp = 'static';
 
     public function getProtectedProp()
