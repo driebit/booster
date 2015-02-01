@@ -1,11 +1,13 @@
 Booster
 =======
 
+[![Build Status](https://travis-ci.org/driebit/booster.svg?branch=master)](https://travis-ci.org/driebit/booster)
+
 Introduction
 ------------
 
 Booster is a set of tools that will make your PHP and/or Symfony tests run
-faster and use less memory. 
+faster and use less memory.
 
 Installation
 ------------
