@@ -5,10 +5,7 @@ Introduction
 ------------
 
 Booster is a set of tools that will make your PHP and/or Symfony tests run
-faster and use less memory. This is done through traits
-
-Instead of base test cases,  which would limit you
-to single inheritance
+faster and use less memory. 
 
 Installation
 ------------
