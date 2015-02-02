@@ -35,7 +35,7 @@ class Cleaner
             if (!$prop->isStatic()) {
                 foreach ($this->whitelist as $item => $length) {
                     if (0 === strncmp(
-                        $prop->getName(),
+                        $prop->getDeclaringClass()->getName(),
                         $item,
                         $length
                     )) {

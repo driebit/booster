@@ -1,35 +1,42 @@
 <?php
 
-namespace Driebit\Booster\Tests;
+namespace Driebit\Booster\Tests {
+    use Driebit\Booster\Cleaner;
 
-use Driebit\Booster\Cleaner;
-
-class CleanerTest extends \PHPUnit_Framework_TestCase
-{
-    public function testNullProperties()
+    class CleanerTest extends \PHPUnit_Framework_TestCase
     {
-        $object = new SillyObject();
+        public function testNullProperties()
+        {
+            $object = new SillyObject();
 
-        $cleaner = new Cleaner();
-        $cleaner->nullProperties($object);
+            $cleaner = new Cleaner();
+            $cleaner->nullProperties($object);
 
-        $this->assertNull($object->publicProp);
-        $this->assertNull($object->getProtectedProp());
-        $this->assertEquals('static', $object::$staticProp);
-        $this->assertEquals('whitelisted', $object->PHPUnit_whitelisted);
+            $this->assertNull($object->publicProp);
+            $this->assertNull($object->getProtectedProp());
+            $this->assertEquals('static', $object::$staticProp);
+            $this->assertEquals('whitelisted', $object->whitelisted);
+        }
+    }
 
+    class SillyObject extends \PHPUnit_Whitelisted
+    {
+        public $publicProp = 'public';
+        protected $protectedProp = 'protected';
+        public static $staticProp = 'static';
+
+        public function getProtectedProp()
+        {
+            return $this->protectedProp;
+        }
     }
 }
 
-class SillyObject
+namespace
 {
-    public $publicProp = 'public';
-    protected $protectedProp = 'protected';
-    public $PHPUnit_whitelisted = 'whitelisted';
-    public static $staticProp = 'static';
-
-    public function getProtectedProp()
+    class PHPUnit_Whitelisted
     {
-        return $this->protectedProp;
+        public $whitelisted = 'whitelisted';
     }
+
 }
